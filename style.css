@@ -1,0 +1,140 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+body {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  
+}
+
+/* #reset-btn {
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: red; 
+   
+} */
+#reset-btn {
+  background-color: transparent;
+  border: 2px solid #008cba;
+  color: #008cba;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#reset-btn:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+  transition: transform 0.3s ease;
+  
+
+  
+}
+
+.card.flipped {
+  background-color: #b61616;
+  color: #000;
+  cursor: default;
+}
+
+.card.matched {
+  background-color: lightgreen;
+  color: #000;
+  cursor: default;
+}
+
+.dark {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .dark {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode .playAgain {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode #cube {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .card {
+  background-color: white;
+  color: black;
+  border: 2px solid #444;
+}
+
+.dark-mode .card.flipped {
+  background-color: hsl(0, 98%, 49%);
+  color: black;
+}
+
+.dark-mode .card.matched {
+  background-color: #90ee90; /* light green */
+  color: black;
+}
+
+
+.message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: green;
+  margin: 1rem 0;
+}
