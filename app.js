@@ -75,7 +75,8 @@ function flipCard(card) {
 
   card.textContent = card.dataset.value;
   card.classList.add("flipped");
-
+  flipSound.volume = 0.5;
+  flipSound.play();
   if (!first) {
     first = card;
     return;
