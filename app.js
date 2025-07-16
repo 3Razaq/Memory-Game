@@ -7,6 +7,7 @@ const loseVideo = document.getElementById("loseVideo");
 const matchSound = new Audio('matchSound.wav');
 const mismatchSound = new Audio('mismatchSound.mp4');
 const winSound = new Audio('winSound.mp3');
+const flipSound = new Audio('flipSound.mp3');
 
 
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
