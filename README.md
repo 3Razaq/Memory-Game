@@ -26,3 +26,15 @@ Welcome to my **Memory Card Game** — a fun browser-based challenge built with 
 
 ---
 
+## 📸 Screenshots
+
+### 🎮 Game Board
+<img src="gameboard.png" >
+
+### 🌑 Dark Mode
+<img src="darkmode.png" >
+
+
+### 🎉 Win Message
+<img src="win.png" >
+
