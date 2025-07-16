@@ -88,6 +88,8 @@ function flipCard(card) {
   if (first.dataset.value === second.dataset.value) {
     first.classList.add("matched");
     second.classList.add("matched");
+    matchSound.volume = 0.5;
+    matchSound.play();
     matchCount++;
     if (matchCount === 8) {
         clearInterval(timer);
