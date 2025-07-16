@@ -19,7 +19,6 @@ let matchCount = 0;
 
 let timer = null;
 let timeLeft = 60; // seconds
-ount = 0; 
 
 
 // Shuffle the cards
@@ -38,13 +37,13 @@ function makeBoard() {
   document.getElementById("message").textContent = "";
   document.getElementById("timer").textContent = "Time: 60s";
   matchCount = 0;
-  timeLeft = 20;
+  timeLeft = 60;
   loseVideo.pause();
 loseVideo.currentTime = 0;
 loseVideo.style.display = "none";
 
 
-  if (timer) clearInterval(timer); // stop old timer
+  if (timer) clearInterval(timer);
 
   timer = setInterval(() => {
     timeLeft--;
@@ -63,12 +62,12 @@ loseVideo.style.display = "none";
       loseSound.play();
 
 
-      revealAllCards();
+      
     }
   }, 1000);
 
 
-  
+
   all.forEach((letter) => {
     let card = document.createElement("div");
     card.className = "card";
@@ -77,12 +76,7 @@ loseVideo.style.display = "none";
     card.addEventListener("click", () => flipCard(card));
     board.appendChild(card);
   });
-
-  // first = null;
-  // second = null;
-  // flipping = false;
 }
-
 
 // Flip a card
 function flipCard(card) {
@@ -129,7 +123,7 @@ function flipCard(card) {
       second.classList.remove("flipped");
       clearTurn();
       
-    }, 1000);
+    }, 500);
   }
 }
 
