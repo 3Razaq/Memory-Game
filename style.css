@@ -138,3 +138,34 @@ h1 {
   color: green;
   margin: 1rem 0;
 }
+
+/* #loseVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background-color: black;
+
+} */
+
+#loseVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+  height: 75vh;
+  object-fit: cover;
+   /* Auto height to keep aspect ratio */
+  max-width: 1000px;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  
+}
+

@@ -5,6 +5,12 @@ const loseVideo = document.getElementById("loseVideo");
 
 
 
+const matchSound = new Audio('matchSound.wav');
+const mismatchSound = new Audio('mismatchSound.mp4');
+const winSound = new Audio('winSound.mp3');
+const flipSound = new Audio('flipSound.mp3');
+
+
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 let first = null;
 let second = null;
@@ -32,7 +38,12 @@ function makeBoard() {
   document.getElementById("message").textContent = "";
   document.getElementById("timer").textContent = "Time: 60s";
   matchCount = 0;
-  timeLeft = 60;
+  timeLeft = 20;
+  loseVideo.pause();
+loseVideo.currentTime = 0;
+loseVideo.style.display = "none";
+
+  
 
   if (timer) clearInterval(timer); // stop old timer
 
@@ -44,7 +55,15 @@ function makeBoard() {
       clearInterval(timer);
       flipping = true;
       document.getElementById("message").textContent = "⏰ Time's up! You Lose!";
-      // Optionally flip all remaining cards
+      
+      loseVideo.style.display = "block";
+      loseVideo.play();
+
+      
+      loseSound.volume = 0.5;
+      loseSound.play();
+
+
       revealAllCards();
     }
   }, 1000);
@@ -70,7 +89,8 @@ function flipCard(card) {
 
   card.textContent = card.dataset.value;
   card.classList.add("flipped");
-
+  flipSound.volume = 0.5;
+  flipSound.play();
   if (!first) {
     first = card;
     return;
@@ -82,10 +102,14 @@ function flipCard(card) {
   if (first.dataset.value === second.dataset.value) {
     first.classList.add("matched");
     second.classList.add("matched");
+    matchSound.volume = 0.5;
+    matchSound.play();
     matchCount++;
     if (matchCount === 8) {
         clearInterval(timer);
         document.getElementById("message").textContent = `🎉 You Win in ${60 - timeLeft} seconds!`;
+        winSound.volume = 0.5;
+        winSound.play();
     }
 
 
@@ -93,6 +117,10 @@ function flipCard(card) {
 
 
   } else {
+
+    mismatchSound.volume = 0.5;
+    mismatchSound.play(); 
+
     setTimeout(() => {
       first.textContent = null;
       second.textContent = null;
