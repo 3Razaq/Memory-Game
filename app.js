@@ -4,6 +4,7 @@ const darkBtn = document.querySelector(".dark");
 const loseVideo = document.getElementById("loseVideo");
 
 
+
 const matchSound = new Audio('matchSound.wav');
 const mismatchSound = new Audio('mismatchSound.mp4');
 const winSound = new Audio('winSound.mp3');
@@ -37,7 +38,11 @@ function makeBoard() {
   document.getElementById("message").textContent = "";
   document.getElementById("timer").textContent = "Time: 60s";
   matchCount = 0;
-  timeLeft = 60;
+  timeLeft = 20;
+  loseVideo.pause();
+loseVideo.currentTime = 0;
+loseVideo.style.display = "none";
+
 
   if (timer) clearInterval(timer); // stop old timer
 
@@ -106,7 +111,7 @@ function flipCard(card) {
 
     mismatchSound.volume = 0.5;
     mismatchSound.play(); 
-    
+
     setTimeout(() => {
       first.textContent = null;
       second.textContent = null;
