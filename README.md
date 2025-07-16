@@ -13,3 +13,16 @@ Welcome to my **Memory Card Game** — a fun browser-based challenge built with 
 - Your goal is to match all pairs **before the timer runs out**!
 
 ---
+
+## ⚙️ Features
+
+- ✅ Card flip logic and animations
+- ✅ Countdown timer (starts at 60 seconds)
+- ✅ Match & mismatch detection
+- ✅ Win message with your time
+- ✅ Reset game button
+- ✅ Dark mode toggle 🌙 / ☀
+- ✅ Sound effects for game actions
+
+---
+
