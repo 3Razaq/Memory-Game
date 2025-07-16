@@ -4,6 +4,10 @@ const darkBtn = document.querySelector(".dark");
 const loseVideo = document.getElementById("loseVideo");
 
 
+const matchSound = new Audio('matchSound.wav');
+
+
+
 
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 let first = null;
