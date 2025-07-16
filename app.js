@@ -103,6 +103,10 @@ function flipCard(card) {
 
 
   } else {
+
+    mismatchSound.volume = 0.5;
+    mismatchSound.play(); 
+    
     setTimeout(() => {
       first.textContent = null;
       second.textContent = null;
