@@ -1,9 +1,12 @@
-*{
+:root {
+  --main-blue: #008cba;
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  
 }
 
 body {
@@ -14,34 +17,24 @@ body {
 
 h1 {
   margin-bottom: 1rem;
-  
 }
 
-/* #reset-btn {
-  margin-bottom: 2rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 15px;
-  background-color: red; 
-   
-} */
 #reset-btn {
   background-color: transparent;
-  border: 2px solid #008cba;
-  color: #008cba;
+  border: 2px solid var(--main-blue);
+  color: var(--main-blue);
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 2rem;
 }
 
 #reset-btn:hover {
-  background-color: #008cba;
+  background-color: var(--main-blue);
   color: white;
 }
-
 
 .game-board {
   display: grid;
@@ -63,9 +56,11 @@ h1 {
   border-radius: 8px;
   user-select: none;
   transition: transform 0.3s ease;
-  
+}
 
-  
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .card.flipped {
@@ -91,7 +86,7 @@ h1 {
   background-color: black;
   color: white;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: 0.3s;
 }
@@ -106,15 +101,6 @@ h1 {
   color: black;
 }
 
-.dark-mode .playAgain {
-  background-color: white;
-  color: black;
-}
-
-.dark-mode #cube {
-  background-color: #1e1e1e;
-}
-
 .dark-mode .card {
   background-color: white;
   color: black;
@@ -127,10 +113,9 @@ h1 {
 }
 
 .dark-mode .card.matched {
-  background-color: #90ee90; /* light green */
+  background-color: #90ee90;
   color: black;
 }
-
 
 .message {
   text-align: center;
@@ -139,19 +124,6 @@ h1 {
   margin: 1rem 0;
 }
 
-/* #loseVideo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  display: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  background-color: black;
-
-} */
-
 #loseVideo {
   position: fixed;
   top: 50%;
@@ -159,13 +131,30 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 9999;
   display: none;
-  height: 75vh;
-  object-fit: cover;
-   /* Auto height to keep aspect ratio */
+  width: 90vw;
   max-width: 1000px;
+  height: auto;
+  object-fit: cover;
   border-radius: 10px;
   background-color: black;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  
 }
 
+/* Responsive design */
+@media (max-width: 500px) {
+  .game-board {
+    grid-template-columns: repeat(4, 70px);
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  #reset-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
