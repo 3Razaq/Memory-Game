@@ -94,6 +94,8 @@ function flipCard(card) {
     if (matchCount === 8) {
         clearInterval(timer);
         document.getElementById("message").textContent = `🎉 You Win in ${60 - timeLeft} seconds!`;
+        winSound.volume = 0.5;
+        winSound.play();
     }
 
 
