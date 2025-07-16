@@ -54,11 +54,21 @@ loseVideo.style.display = "none";
       clearInterval(timer);
       flipping = true;
       document.getElementById("message").textContent = "⏰ Time's up! You Lose!";
-      // Optionally flip all remaining cards
+      
+      loseVideo.style.display = "block";
+      loseVideo.play();
+
+      
+      loseSound.volume = 0.5;
+      loseSound.play();
+
+
       revealAllCards();
     }
   }, 1000);
 
+
+  
   all.forEach((letter) => {
     let card = document.createElement("div");
     card.className = "card";
